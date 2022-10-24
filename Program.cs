@@ -105,7 +105,7 @@ checkElementOfArray2D(userRowIndex, userColumnIndex, userArray2D);
 */
 
 // Задача 3. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-/*
+
 int [,] createRandomArray2D (int [,] array2D)
 {
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -117,7 +117,7 @@ int [,] createRandomArray2D (int [,] array2D)
     }
     return array2D;
 }
-void findArithmeticMeanOfColumn (int [,] array2D)
+double [] findArithmeticMeanOfColumn (int [,] array2D, double [] arrayWithArithmeticMeanValues)
 {
     int sumOfNumbersInColumn = 0;
     double arithmeticMeanOfColumn = 0;
@@ -132,11 +132,12 @@ void findArithmeticMeanOfColumn (int [,] array2D)
                 quantityOfNumbersInColumn++;
             }
             arithmeticMeanOfColumn = Convert.ToDouble(sumOfNumbersInColumn) / Convert.ToDouble(quantityOfNumbersInColumn);
-            Console.WriteLine($"The arithmetic mean of column {columnNumber} is {arithmeticMeanOfColumn}");
+            arrayWithArithmeticMeanValues [columnNumber] = arithmeticMeanOfColumn;
             columnNumber++;
             sumOfNumbersInColumn = 0;
             quantityOfNumbersInColumn = 0;
         }
+    return arrayWithArithmeticMeanValues;
 }
 
 void showArray2D (int [,] array2D)
@@ -164,10 +165,15 @@ int maxValue = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
 int [,] userArray2D = new int [userNumberOfRows, userNumberOfColumns];
+double [] arrayArithmMean = new double [userNumberOfColumns];
 
 createRandomArray2D(userArray2D);
 showArray2D(userArray2D);
 Console.WriteLine();
 
-findArithmeticMeanOfColumn(userArray2D);
-*/
+findArithmeticMeanOfColumn(userArray2D, arrayArithmMean);
+
+for (int countColumns = 0; countColumns < arrayArithmMean.Length; countColumns++)
+{
+    Console.WriteLine($"The arithmetic mean of column {countColumns} is {arrayArithmMean [countColumns]}");
+}
