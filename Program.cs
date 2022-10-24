@@ -105,7 +105,7 @@ checkElementOfArray2D(userRowIndex, userColumnIndex, userArray2D);
 */
 
 // Задача 3. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
+/*
 int [,] createRandomArray2D (int [,] array2D)
 {
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -170,3 +170,4 @@ showArray2D(userArray2D);
 Console.WriteLine();
 
 findArithmeticMeanOfColumn(userArray2D);
+*/
