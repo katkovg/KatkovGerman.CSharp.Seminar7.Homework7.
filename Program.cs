@@ -1,4 +1,5 @@
 ﻿// Задача 1. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами
+
 /*
 double [,] createArray2D (double [,] array2D, double minimal, double maximal)
 {
